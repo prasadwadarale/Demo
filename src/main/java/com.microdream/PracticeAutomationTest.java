@@ -32,12 +32,12 @@ public class PracticeAutomationTest {
         WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
         submitButton.click();
 
+        Assert.assertEquals(userName.getText(),"student");
+        Assert.assertEquals(password.getText(),"Password123");
 
         WebElement logOutButton = driver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a"));
         logOutButton.click();
-
-        Assert.assertEquals(userName.getText(),"student");
-        Assert.assertEquals(password.getText(),"Password123");
+        driver.close();
     }
 
 
@@ -60,11 +60,12 @@ public class PracticeAutomationTest {
 
         Thread.sleep(800);
 
-        WebElement submitButton1 = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton1.click();
-
         Assert.assertEquals(userName.getText(),"student");
         Assert.assertEquals(password.getText(),"Password123");
+
+        WebElement submitButton1 = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+        submitButton1.click();
+        driver.close();
     }
 
 
@@ -82,12 +83,12 @@ public void invalidUser() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("Password123");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 //valid user name and blank password
@@ -103,12 +104,12 @@ public void blankPassword() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 // blank user name and valid password
@@ -124,12 +125,12 @@ public void blankUser() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("Password123");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 //invalid user name and blank password
@@ -145,12 +146,12 @@ public void invalidUserBlankPassword() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 // blank user name and invalid password
@@ -166,12 +167,12 @@ public void BlankUserInvalidPassword() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("123");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 //blank user name amd blank password
@@ -187,13 +188,12 @@ public void blankUserAndPassword() {
         WebElement password= driver.findElement(By.xpath("//*[@id=\"password\"]"));
         password.sendKeys("");
 
-
-        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
-        submitButton.click();
-
-
     Assert.assertEquals(userName.getText(),"student");
     Assert.assertEquals(password.getText(),"Password123");
+
+    WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+    submitButton.click();
+    driver.close();
 }
 
 }
